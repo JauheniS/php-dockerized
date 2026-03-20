@@ -1,0 +1,21 @@
+services:
+  php:
+    build:
+      context: Dockerfile
+    container_name: php
+    env_file:
+      - "./application/.env"
+    restart: always
+    platform: linux/arm64
+    tty: true
+    stdin_open: true
+    logging:
+      driver: "local"
+    networks:
+      - default
+    volumes:
+      - ./projects:/projects
+
+networks:
+  default:
+    driver: bridge
