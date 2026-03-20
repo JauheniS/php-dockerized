@@ -53,7 +53,7 @@ RUN apt-get update -yqq \
         bison
 
 # Install Protocol Buffers
-RUN pie install php-extensions/grpc \
+RUN pie install pie-extensions/grpc \
     && docker-php-ext-enable grpc
 
 RUN docker-php-ext-install zip \
@@ -64,7 +64,7 @@ RUN docker-php-ext-install zip \
     && docker-php-ext-install pdo \
     && docker-php-ext-install pdo_mysql
 
-RUN pie install php-extensions/protobuf \
+RUN pie install pie-extensions/protobuf \
     && docker-php-ext-enable protobuf
 
 RUN echo 'memory_limit = 512M' >> /usr/local/etc/php/conf.d/docker-php-memlimit.ini
