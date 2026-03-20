@@ -1,5 +1,5 @@
 FROM composer/composer:latest-bin AS composer
-FROM ghcr.io/php/pie:bin as pie
+FROM ghcr.io/php/pie:bin AS pie
 FROM php:8.5-cli
 
 COPY --from=composer /composer /usr/local/bin/composer
